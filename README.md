@@ -1,6 +1,8 @@
 # Testing Postgres Extension Directory
 
-A simple test case for [this bug report](https://postgr.es/m/C86FCCFD-0C84-4F70-BA54-72C04A2F69DF@justatheory.com). Sample run:
+A simple test case for [this bug report](https://postgr.es/m/C86FCCFD-0C84-4F70-BA54-72C04A2F69DF@justatheory.com).
+
+Actual output:
 
 ```console
 $ make install
