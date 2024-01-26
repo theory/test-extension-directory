@@ -1,0 +1,5 @@
+# click extension
+comment = 'A click data type'
+default_version = '1.0.0'
+relocatable = true
+directory = 'extension/click'
