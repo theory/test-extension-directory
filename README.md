@@ -35,3 +35,21 @@ From [the docs](https://www.postgresql.org/docs/16/extend-extensions.html):
 > `directory` (`string`)
 >
 > The directory containing the extension's SQL script file(s). Unless an absolute path is given, the name is relative to the installation's `SHAREDIR` directory. The default behavior is equivalent to specifying `directory = 'extension'`.
+
+## The Fix
+
+Turns out this it requires that `MODULEDIR` *also* be set in the `Makefile`:
+
+```makefile
+MODULEDIR = extension/click
+```
+
+With that in place, it works as expected:
+
+``` console
+$ make install
+gmkdir -p '/data/pgsql/share/extension'
+gmkdir -p '/data/pgsql/share/extension/click'
+ginstall -c -m 644 .//click.control '/data/pgsql/share/extension/'
+ginstall -c -m 644 .//sql/click--1.0.0.sql  '/data/pgsql/share/extension/click/'
+```
