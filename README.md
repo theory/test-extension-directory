@@ -1,6 +1,6 @@
 # Testing Postgres Extension Directory
 
-A simple test case for [this bug report](https://postgr.es/m/C86FCCFD-0C84-4F70-BA54-72C04A2F69DF@justatheory.com).
+A simple test case for [this bug report](https://postgr.es/m/C86FCCFD-0C84-4F70-BA54-72C04A2F69DF@justatheory.com). Not actually a bug, though; see the [fix below](#the-fix).
 
 Actual output:
 
