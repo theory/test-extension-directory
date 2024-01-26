@@ -21,3 +21,17 @@ gmkdir -p '/data/pgsql/share/extension/click'
 ginstall -c -m 644 .//click.control '/data/pgsql/share/extension/'
 ginstall -c -m 644 .//sql/click--1.0.0.sql  '/data/pgsql/share/extension/click'
 ```
+
+Note that the `click` subdirectory is neither created nor used to install the
+`DATA` file in th actual output, despite this line in the [control
+file](./click.control):
+
+``` ini
+directory = 'extension/click'
+```
+
+From [the docs](https://www.postgresql.org/docs/16/extend-extensions.html):
+
+> `directory` (`string`)
+>
+> The directory containing the extension's SQL script file(s). Unless an absolute path is given, the name is relative to the installation's `SHAREDIR` directory. The default behavior is equivalent to specifying `directory = 'extension'`.
